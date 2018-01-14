@@ -1,4 +1,11 @@
 package com.codecool.scc.view;
 
-public class XmlOutputFormatter {
+import java.util.List;
+
+public class XmlOutputFormatter implements OutputFormatter {
+
+    @Override
+    public void printToConsole(List<String[]> data) {
+        System.out.println("printedXmlHere!");
+    }
 }
