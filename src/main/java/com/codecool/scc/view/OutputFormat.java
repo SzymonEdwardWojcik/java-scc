@@ -1,6 +1,6 @@
 package com.codecool.scc.view;
 
-public enum outputFormat {
+public enum OutputFormat {
     JSON,
     XML,
     TABLE
