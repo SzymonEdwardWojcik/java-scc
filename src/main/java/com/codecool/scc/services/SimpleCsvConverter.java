@@ -20,6 +20,7 @@ public class SimpleCsvConverter {
     }
 
     public void convert(File file) {
+
         try {
             List<String[]> data = fileReader.readData(file);
             OutputFormatter outputFormatter = outputFormatterFactory.createByFormat(OutputFormat.TABLE);
@@ -31,7 +32,15 @@ public class SimpleCsvConverter {
     }
 
     public void convert(File file, OutputFormat outputFormat) {
-        System.out.println("I convert CSV to output format");
+
+        try {
+            List<String[]> data = fileReader.readData(file);
+            OutputFormatter outputFormatter = outputFormatterFactory.createByFormat(outputFormat);
+            outputFormatter.printToConsole(data);
+
+        } catch (IOException e) {
+            System.out.println("Wrong file name. Please check if such file exists.");
+        }
     }
 
 }
