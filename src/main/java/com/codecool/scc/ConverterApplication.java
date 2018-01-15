@@ -1,7 +1,9 @@
 package com.codecool.scc;
 
+import com.codecool.scc.dao.FileReader;
 import com.codecool.scc.services.SimpleCsvConverter;
 import com.codecool.scc.view.OutputFormat;
+import com.codecool.scc.view.OutputFormatterFactory;
 
 import java.io.File;
 
@@ -9,7 +11,7 @@ public class ConverterApplication {
 
     public static void main(String[] args) {
 
-        SimpleCsvConverter scc = new SimpleCsvConverter();
+        SimpleCsvConverter scc = new SimpleCsvConverter(new FileReader(), new OutputFormatterFactory());
         OutputFormat outputFormat;
         File file;
 
