@@ -8,7 +8,7 @@ import java.io.FileReader;
 
 public class SimpleCsvConverter {
 
-    private FileReader fileReader
+    private FileReader fileReader;
     private OutputFormatterFactory outputFormatterFactory;
 
     public SimpleCsvConverter(FileReader fileReader, OutputFormatterFactory outputFormatterFactory) {
