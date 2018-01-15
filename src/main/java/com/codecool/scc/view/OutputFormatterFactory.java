@@ -1,5 +1,8 @@
 package com.codecool.scc.view;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class OutputFormatterFactory {
 
     public OutputFormatter createByFormat(OutputFormat outputFormat) {
