@@ -1,9 +1,8 @@
 package com.codecool.scc;
 
-import com.codecool.scc.dao.FileReader;
 import com.codecool.scc.services.SimpleCsvConverter;
 import com.codecool.scc.view.OutputFormat;
-import com.codecool.scc.view.OutputFormatterFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
 
@@ -11,7 +10,8 @@ public class ConverterApplication {
 
     public static void main(String[] args) {
 
-        SimpleCsvConverter scc = new SimpleCsvConverter(new FileReader(), new OutputFormatterFactory());
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
+        SimpleCsvConverter scc = (SimpleCsvConverter) ctx.getBean("simpleCsvConverter");
         OutputFormat outputFormat;
         File file;
 
